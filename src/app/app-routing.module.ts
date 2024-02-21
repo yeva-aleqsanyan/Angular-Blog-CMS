@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from "./app.component";
-import { LoginPageComponent } from "./login-page/login-page.component";
-import { PagesListComponent } from "./pages-list/pages-list.component";
+import { LoginPageComponent } from './login-page/login-page.component';
+import { PagesListComponent } from './pages-list/pages-list.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { AdminPageComponent } from './admin-page/admin-page.component';
+import { adminGuard } from './guards/admin.guard';
+import { subscriberGuard } from './guards/subscriber.guard';
 
 const routes: Routes = [
-  {path: '', component: PagesListComponent},
-  {path: 'login', component: LoginPageComponent},
+  { path: '', component: HomePageComponent},
+  { path: 'login', component: LoginPageComponent},
+  { path: 'article', component: PagesListComponent, canActivate: [subscriberGuard]},
+  { path: 'admin', component: AdminPageComponent, canActivate: [adminGuard]},
 
 ];
 
