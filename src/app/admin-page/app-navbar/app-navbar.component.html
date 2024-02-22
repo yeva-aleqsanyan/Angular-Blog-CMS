@@ -4,9 +4,7 @@
 
     <span class="example-spacer"></span>
 
-    <button mat-button routerLink="/article">Article Page</button>
-    <button mat-button routerLink="/admin">Admin</button>
-    <div *ngIf="!user">
+   <div *ngIf="!user">
       <button mat-button (click)="AfService.loginWithGoogle()">Login</button>
     </div>
     <div *ngIf="user">
@@ -27,7 +25,4 @@
   </mat-toolbar-row>
 </mat-toolbar>
 
-<div *ngIf="user">
-  <p>Subscriber: {{user.roles.subscriber}}</p>
-  <p>Admin: {{user.roles.admin}}</p>
-</div>
+
