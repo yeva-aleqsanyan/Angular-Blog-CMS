@@ -1,0 +1,9 @@
+mat-form-field {
+    display: block;
+}
+mat-dialog-actions {
+    justify-content: center;
+}
+mat-dialog-actions button {
+    width: 150px;
+}
