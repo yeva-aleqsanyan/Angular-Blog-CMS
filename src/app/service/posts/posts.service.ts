@@ -5,8 +5,9 @@ import { map } from 'rxjs/operators';
 
 
 export interface Post {
-  title: ""; 
-  url: ""; 
+  title: "",
+  menu_id: "",
+  content: ""
 }
 
 @Injectable({

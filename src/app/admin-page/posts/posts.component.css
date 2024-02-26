@@ -1,0 +1,17 @@
+.example-container mat-form-field{
+    padding: 10px;
+}
+.example-container1 {
+    padding: 10px;
+}
+.example-header-filter mat-form-field{
+    width: 100%;
+}
+td, th {
+    width: 25%;
+}
+.table-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+}

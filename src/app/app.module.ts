@@ -19,6 +19,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { MaterialModule } from './material.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async'; 
 import { MenusService } from './service/menus/menus.service';
+import { PostsService } from './service/posts/posts.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { MenusService } from './service/menus/menus.service';
     AngularFireAuthModule,
     MaterialModule,
   ],
-  providers: [AfService, provideAnimationsAsync(), MenusService],
+  providers: [AfService, provideAnimationsAsync(), MenusService, PostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
