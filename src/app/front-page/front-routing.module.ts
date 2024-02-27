@@ -2,6 +2,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PagesListComponent } from './pages-list/pages-list.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { FrontPageComponent } from './front-page.component'; 
+import { PagesComponent } from './pages/pages.component'; 
 
 const routes: Routes = [
   {
@@ -12,14 +13,17 @@ const routes: Routes = [
         path: "home",
         component: HomePageComponent
       },
-      
-      { path: 'article', 
+      { 
+        path: "article", 
         component: PagesListComponent
       },
       {
+        path: "pages/:url",
+        component: PagesComponent
+      },
+      {
         path: "**",
-        pathMatch: "full",
-        redirectTo: "dashboard"
+        redirectTo: "home"
       }
     ]
   }
