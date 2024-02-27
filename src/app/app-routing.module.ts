@@ -8,9 +8,10 @@ const frontPageComponentPromise = () => import('./front-page/front-page.module')
 
 
 const routes: Routes = [
-  { path: '', loadChildren: frontPageComponentPromise},
+  { path: 'home', loadChildren: frontPageComponentPromise},
   { path: 'login', component: LoginPageComponent},
   { path: 'admin', loadChildren: adminPageModulePromise, canActivate: [adminGuard]},
+  {path: '**', redirectTo: 'home'}
 
 ];
 

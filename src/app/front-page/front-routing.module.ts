@@ -10,7 +10,7 @@ const routes: Routes = [
     component: FrontPageComponent,
     children: [
       {
-        path: "home",
+        path: "",
         component: HomePageComponent
       },
       { 
