@@ -1,5 +1,5 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 
 @Component({
@@ -7,11 +7,8 @@ import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dial
   templateUrl: './edit-menu.component.html',
   styleUrl: './edit-menu.component.css'
 })
-export class EditMenuComponent implements OnInit{
+export class EditMenuComponent {
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
 
-  ngOnInit(){
-  }
-  
 }
