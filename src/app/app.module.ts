@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
@@ -18,6 +18,7 @@ import { MaterialModule } from './material.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async'; 
 import { MenusService } from './service/menus/menus.service';
 import { PostsService } from './service/posts/posts.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,12 @@ import { PostsService } from './service/posts/posts.service';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     MaterialModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [AfService, provideAnimationsAsync(), MenusService, PostsService],
   bootstrap: [AppComponent]
